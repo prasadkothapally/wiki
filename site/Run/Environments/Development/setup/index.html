@@ -1,0 +1,2497 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://prasadkothapally.github.io/wiki/Run/Environments/Development/setup/">
+      
+      
+        <link rel="prev" href="../Overview/">
+      
+      
+        <link rel="next" href="../../Staging/Overview/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.2.0">
+    
+    
+      
+        <title>Setup - AllFunds Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0e669242.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="../../../../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../../../../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../../../../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../../../../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../../../../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../../../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../../../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../../../../assets/mkdocs_puml/puml.css">
+    
+      <link rel="stylesheet" href="../../../../assets/mkdocs_puml/interaction.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#setup" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="AllFunds Wiki" class="md-header__button md-logo" aria-label="AllFunds Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AllFunds Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Setup
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/prasadkothapally/wiki.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="AllFunds Wiki" class="md-nav__button md-logo" aria-label="AllFunds Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    AllFunds Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/prasadkothapally/wiki.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Build
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Build
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Architecture/Deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deployment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Architecture/Messaging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Messaging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Architecture/Observability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Observability
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Architecture/Persistence/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Persistence
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Architecture/Reliability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reliability
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Architecture/Scalability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scalability
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Architecture/Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Architecture/TechStack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Design
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2" >
+        
+          <label class="md-nav__link" for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Accounting
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Accounting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2_1" >
+        
+          <label class="md-nav__link" for="__nav_3_3_2_1" id="__nav_3_3_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Components
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_3_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Components
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Design/Accounting/Components/acc-analytics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acc analytics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Design/Accounting/Components/acc-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acc api
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Design/Accounting/Components/acc-bo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acc bo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2_2" >
+        
+          <label class="md-nav__link" for="__nav_3_3_2_2" id="__nav_3_3_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dictionary
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Dictionary
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Design/Accounting/Dictionary/dataFlow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Flow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Design/Accounting/Dictionary/erd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entity-Relationship Diagram
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Design/Accounting/Dictionary/procedures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Procedures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Design/Accounting/Dictionary/tables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3" >
+        
+          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    AllFunds
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            AllFunds
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3_1" >
+        
+          <label class="md-nav__link" for="__nav_3_3_3_1" id="__nav_3_3_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Components
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_3_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Components
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Design/AllFunds/Components/af-eventpublisher/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Event Publisher
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Design/AllFunds/Components/af-funds/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Funds Microservice
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Design/AllFunds/Components/af-notifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notifications Microservice
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Design/AllFunds/Components/af-portfolio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Portfolio Microservice
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Design/AllFunds/Components/af-profile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Profile Microservice
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Design/AllFunds/Components/af-scheduler/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Af scheduler
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Design/AllFunds/Components/dlq-processor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DLQ Processor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Design/AllFunds/Components/statemachines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    StateMachines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3_2" >
+        
+          <label class="md-nav__link" for="__nav_3_3_3_2" id="__nav_3_3_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dictionary
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_3_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Dictionary
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Design/AllFunds/Dictionary/collections/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Collections
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Design/AllFunds/Dictionary/tables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_4" >
+        
+          <label class="md-nav__link" for="__nav_3_3_4" id="__nav_3_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Utilities
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Utilities
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Design/Utilities/kestra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kestra
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Engineering
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Engineering
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Build/Engineering/Principles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Principles and Practices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Run
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Run
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Security%20%26%20Authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security &amp; Authentication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../build-server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build Server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Environments
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Environments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_1" checked>
+        
+          <label class="md-nav__link" for="__nav_4_4_1" id="__nav_4_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Development
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Setup
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Setup
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup-of-dev-server" class="md-nav__link">
+    Setup of Dev Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup of Dev Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    Docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minikube" class="md-nav__link">
+    Minikube
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubectl" class="md-nav__link">
+    Kubectl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haproxy" class="md-nav__link">
+    HAPROXY
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caddy" class="md-nav__link">
+    Caddy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kestra" class="md-nav__link">
+    Kestra
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openobserve" class="md-nav__link">
+    Openobserve
+  </a>
+  
+    <nav class="md-nav" aria-label="Openobserve">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-the-fluent-bit-for-the-logs-aggregation" class="md-nav__link">
+    Configure the fluent-bit for the logs aggregation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shell-auto-completion-for-kubectl" class="md-nav__link">
+    Shell Auto-Completion for Kubectl
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-of-dev-replication-server" class="md-nav__link">
+    Setup of Dev Replication Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup of Dev Replication Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker_1" class="md-nav__link">
+    Docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    docker-compose
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_2" >
+        
+          <label class="md-nav__link" for="__nav_4_4_2" id="__nav_4_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Staging
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Staging
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Staging/Overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Staging/SecretsManager%20Implementation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS Secrets Manager Implementation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Staging/SecretsManager/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS Secrets Manager
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Staging/setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Playground
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Playground
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../playground/Staging%20Database/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metabase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../playground/howto-diagrams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Playground to try out various diagrams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup-of-dev-server" class="md-nav__link">
+    Setup of Dev Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup of Dev Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    Docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minikube" class="md-nav__link">
+    Minikube
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubectl" class="md-nav__link">
+    Kubectl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haproxy" class="md-nav__link">
+    HAPROXY
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caddy" class="md-nav__link">
+    Caddy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kestra" class="md-nav__link">
+    Kestra
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openobserve" class="md-nav__link">
+    Openobserve
+  </a>
+  
+    <nav class="md-nav" aria-label="Openobserve">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-the-fluent-bit-for-the-logs-aggregation" class="md-nav__link">
+    Configure the fluent-bit for the logs aggregation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shell-auto-completion-for-kubectl" class="md-nav__link">
+    Shell Auto-Completion for Kubectl
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-of-dev-replication-server" class="md-nav__link">
+    Setup of Dev Replication Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup of Dev Replication Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker_1" class="md-nav__link">
+    Docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    docker-compose
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">#</a></h1>
+<h2 id="setup-of-dev-server"><strong>Setup of Dev Server</strong><a class="headerlink" href="#setup-of-dev-server" title="Permanent link">#</a></h2>
+<p>Following are the softwares along with their versions running in the DEV </p>
+<table>
+<thead>
+<tr>
+<th>Software</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Docker</td>
+<td>24.0.4</td>
+</tr>
+<tr>
+<td>minikube</td>
+<td>v1.30.1</td>
+</tr>
+<tr>
+<td>kubectl</td>
+<td>v1.27.3</td>
+</tr>
+<tr>
+<td>haproxy</td>
+<td>2.0.31-0ubuntu0.3</td>
+</tr>
+<tr>
+<td>caddy</td>
+<td>v2.6.4</td>
+</tr>
+<tr>
+<td>kestra</td>
+<td>kestra/kestra:latest-full</td>
+</tr>
+<tr>
+<td>openobserve</td>
+<td>v0.7.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">#</a></h3>
+<p>The Docker installation package available in the official Ubuntu repository may not be the latest version. To ensure we get the latest version, we’ll install Docker from the official Docker repository. To do that, we’ll add a new package source, add the GPG key from Docker to ensure the downloads are valid, and then install the package.</p>
+<p>First, update your existing list of packages:
+<div class="highlight"><pre><span></span><code> sudo apt update
+</code></pre></div>
+Next, install a few prerequisite packages which let apt use packages over HTTPS:
+<div class="highlight"><pre><span></span><code>sudo apt install apt-transport-https ca-certificates curl software-properties-common
+</code></pre></div>
+Then add the GPG key for the official Docker repository to your system:
+<div class="highlight"><pre><span></span><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+</code></pre></div>
+Add the Docker repository to APT sources:
+<div class="highlight"><pre><span></span><code>sudo add-apt-repository &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable&quot;
+</code></pre></div>
+This will also update our package database with the Docker packages from the newly added repo.</p>
+<p>Make sure to install from the Docker repo instead of the default Ubuntu repo:
+<div class="highlight"><pre><span></span><code>apt-cache policy docker-ce
+</code></pre></div>
+Finally, install Docker:
+<div class="highlight"><pre><span></span><code>sudo apt install docker-ce
+</code></pre></div>
+Docker should now be installed, the daemon started, and the process enabled to start on boot. Check that it’s running:
+<div class="highlight"><pre><span></span><code>sudo systemctl status docker
+</code></pre></div></p>
+<h3 id="minikube">Minikube<a class="headerlink" href="#minikube" title="Permanent link">#</a></h3>
+<p>Minikube is an open source tool that allows you to set up a single-node Kubernetes cluster on our local machine. The cluster is run inside a virtual machine and includes Docker, allowing us to run containers inside the node.</p>
+<p>This is an excellent way to test in a Kubernetes environment locally, without using up too much resources</p>
+<p>Prereuisites:</p>
+<ul>
+<li>2 CPUs or more</li>
+<li>2GB of free memory</li>
+<li>20GB of free disk space</li>
+<li>Internet connection</li>
+<li>Container or virtual machine manager, such as: Docker, QEMU, Hyperkit, Hyper-V, KVM, Parallels, Podman, VirtualBox, or VMware Fusion/Workstation</li>
+</ul>
+<p>1.Installation</p>
+<p>To install the latest minikube stable release on x86-64 Linux using binary download:
+<div class="highlight"><pre><span></span><code>curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+</code></pre></div>
+Next, give the file executive permission using the chmod command:
+<div class="highlight"><pre><span></span><code>sudo chmod 755 /usr/local/bin/minikube
+</code></pre></div>
+2.Start minikube cluster</p>
+<p>From a terminal with administrator access (but not logged in as root), run:
+<div class="highlight"><pre><span></span><code>minikube start
+</code></pre></div>
+3.Manage minikube cluster</p>
+<p>Pause Kubernetes without impacting deployed applications:
+<div class="highlight"><pre><span></span><code>minikube pause
+</code></pre></div>
+Unpause a paused instance:
+<div class="highlight"><pre><span></span><code>minikube unpause
+</code></pre></div>
+Halt the cluster:
+<div class="highlight"><pre><span></span><code>minikube stop
+</code></pre></div>
+Browse the catalog of easily installed Kubernetes services
+<div class="highlight"><pre><span></span><code>minikube addons list
+</code></pre></div>
+The below list of addons are enabled on our DEV minikube</p>
+<ul>
+<li>
+<p>default-storageclass</p>
+</li>
+<li>
+<p>ingress</p>
+</li>
+<li>
+<p>ingress-dns</p>
+</li>
+<li>
+<p>metrics-server</p>
+</li>
+<li>
+<p>storage-provisioner</p>
+</li>
+</ul>
+<p>To login into the minikube:
+<div class="highlight"><pre><span></span><code>minikube ssh
+</code></pre></div>
+To get the IP of minikube:
+<div class="highlight"><pre><span></span><code>minikube ip
+</code></pre></div></p>
+<h3 id="kubectl">Kubectl<a class="headerlink" href="#kubectl" title="Permanent link">#</a></h3>
+<p>To deploy and manage clusters, we need to install kubectl, the official command line tool for Kubernetes.</p>
+<p>1.Download kubectl with the following command
+<div class="highlight"><pre><span></span><code>$ curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+</code></pre></div>
+2.Make the binary executable by typing
+<div class="highlight"><pre><span></span><code>chmod +x ./kubectl
+</code></pre></div>
+3.Then, move the binary into your path with the command:
+<div class="highlight"><pre><span></span><code>sudo mv ./kubectl /usr/local/bin/kubectl
+</code></pre></div>
+4.Verify the installation by checking the version of your kubectl instance:
+<div class="highlight"><pre><span></span><code>kubectl version --short
+</code></pre></div></p>
+<h3 id="haproxy">HAPROXY<a class="headerlink" href="#haproxy" title="Permanent link">#</a></h3>
+<p>HAProxy, which stands for High Availability Proxy, is a popular open source software TCP/HTTP Load Balancer and proxying solution which can be run on Linux, macOS, and FreeBSD.</p>
+<p>Its most common use is to improve the performance and reliability of a server environment by distributing the workload across multiple servers (e.g. web, application, database).</p>
+<p>Installation
+<div class="highlight"><pre><span></span><code>sudo apt install --no-install-recommends software-properties-common
+
+sudo add-apt-repository ppa:vbernat/haproxy-2.4 -y
+</code></pre></div>
+The first command installs the software-properties-common package which helps you manage any PPAs you install. It’s probably already installed, but running it again ensures that it’s available. </p>
+<p>The second command puts the PPA into the list of software sources.</p>
+<p>We’re now ready to install the very latest HAProxy:
+<div class="highlight"><pre><span></span><code>sudo apt install haproxy=2.3.\*
+</code></pre></div>
+To check the haproxy version 
+<div class="highlight"><pre><span></span><code>haproxy -v
+</code></pre></div>
+acc-api, acc-bo, acc-analytics, mfusessionprovider modules are exposed publicly via HAProxy</p>
+<p>We can find the routes configuration at /etc/haproxy/haproxy.cfg
+<div class="highlight"><pre><span></span><code>frontend apiproxy
+  mode tcp
+  bind :18080
+  default_backend k8s_api
+backend k8s_api
+  mode tcp
+  balance leastconn
+  server s4 192.168.49.2:30007
+frontend boproxy
+  mode tcp
+  bind :18081
+  default_backend k8s_bo
+backend k8s_bo
+  mode tcp
+  balance leastconn
+  server s5 192.168.49.2:30008
+</code></pre></div></p>
+<p>To check the status of haproxy, run 
+<div class="highlight"><pre><span></span><code>systemctl status haproxy
+</code></pre></div>
+After the routes configuration in /etc/haproxy/haproxy.cfg , run the below command so that new routes will be available to access.
+<div class="highlight"><pre><span></span><code>systemctl reload haproxy 
+</code></pre></div></p>
+<h3 id="caddy">Caddy<a class="headerlink" href="#caddy" title="Permanent link">#</a></h3>
+<p>Caddy is a powerful, extensible platform to serve your sites, services, and apps</p>
+<p>Most people use Caddy as a web server or proxy, but at its core, Caddy is a server of servers. With the requisite modules, it can take on the role of any long-running process.</p>
+<p>Configuration is both dynamic and exportable with Caddy's API. Although no config files required, you can still use them; most people's favorite way of configuring Caddy is using the Caddyfile. The format of the config document takes many forms with config adapters, but Caddy's native config language is JSON.</p>
+<p>Caddy compiles for all major platforms and has no runtime dependencies.</p>
+<p>1.Installation</p>
+<p>Download Caddy from the following releases pages , choose the version and system compatible one.</p>
+<p><a href="https://github.com/caddyserver/caddy/releases">caddy</a></p>
+<p>2.The Caddyfile</p>
+<p>The Caddyfile is a convenient Caddy configuration format for humans. </p>
+<p>It is most people's favorite way to use Caddy because it is easy to write, easy to understand, and expressive enough for most use cases.</p>
+<p>We have Caddyfile available at below path in DEV environment
+/home/laxma/software </p>
+<p>3.Caddy has a standard unix-like command line interface. Basic usage is:
+<div class="highlight"><pre><span></span><code>caddy start - Starts the Caddy process in the background
+
+caddy run - Starts the Caddy process in the foreground
+
+caddy stop - Stops the running Caddy process
+
+caddy upgrade - Upgrades Caddy to the latest release
+
+caddy file-server - A simple but production-ready file server
+
+caddy reload - Changes the config of the running Caddy process
+</code></pre></div></p>
+<p>For more information, please check the below documentation</p>
+<p><a href="https://caddyserver.com/docs/command-line">Caddy documentation</a></p>
+<h3 id="kestra">Kestra<a class="headerlink" href="#kestra" title="Permanent link">#</a></h3>
+<p>The chart repository is available under helm.kestra.io.</p>
+<p>The source code of the charts can be found in the kestra-io/helm-charts repository.</p>
+<p>1.Install the Chart
+<div class="highlight"><pre><span></span><code>helm repo add kestra https://helm.kestra.io/
+</code></pre></div>
+By default, the chart will only deploy one Kestra standalone service with only one replica. This means that all Kestra server components will be deployed within a single pod.</p>
+<p>2.Modify the kestra configuration to use the local storage
+<div class="highlight"><pre><span></span><code>     configuration:
+       kestra:
+         storage:
+           type: local
+           local:
+             base-path: /tmp/kestra/storage/
+</code></pre></div>
+3.Disable the default postgres deployment available in helm chart, and add our own datasource.
+<div class="highlight"><pre><span></span><code>    configuration:
+      datasources:
+        postgres:
+          url: jdbc:postgresql://172.16.22.16:5432/accounting?currentSchema=kestra
+          driverClassName: org.postgresql.Driver
+          username: ****
+          password: ****
+
+    #### Postgresql
+    postgresql:
+      enabled: false
+      auth:
+        database: kestra
+        username: kestra
+        password: kestra
+      primary:
+        persistence:
+          enabled: false
+          size: 8Gi
+</code></pre></div></p>
+<p>4.Disable all other deployments and enable only standalone deployment.
+<div class="highlight"><pre><span></span><code>    deployments:
+      webserver:
+        enabled: false
+        kind: Deployment
+      executor:
+        enabled: false
+        kind: Deployment
+        command: &quot;server executor&quot;
+      indexer:
+        enabled: false
+        kind: Deployment
+        command: &quot;server indexer&quot;
+      scheduler:
+        enabled: false
+        kind: Deployment
+        command: &quot;server scheduler&quot;
+      worker:
+        enabled: false
+        kind: Deployment
+        command: &quot;server worker --thread={{ .Values.deployments.worker.workerThreads }}&quot;
+        terminationGracePeriodSeconds: 60
+        workerThreads: 128
+      standalone:
+        enabled: true
+        kind: Deployment
+        command: &quot;server standalone --worker-thread={{ .Values.deployments.standalone.workerThreads }}&quot;
+        terminationGracePeriodSeconds: 60
+        workerThreads: 128
+</code></pre></div>
+5.Install the helm chart using the below command.
+<div class="highlight"><pre><span></span><code>helm install kestra . -n kestra -f values.yaml
+</code></pre></div>
+6.Check the deployment, service and configmap using the below command.
+<div class="highlight"><pre><span></span><code>kubectl get deployment -n kestra
+kubectl get svc -n kestra
+kubectl get cm -n kestra
+</code></pre></div>
+7.Create a temporary tunnel by port-forwarding the kestra-service.
+<div class="highlight"><pre><span></span><code>kubectl -n kestra port-forward --address 0.0.0.0 svc/kestra-service 8080:8080
+</code></pre></div>
+8.Access the kestra at the below address</p>
+<pre><code>http://172.16.22.22:8080/
+</code></pre>
+<h3 id="openobserve">Openobserve<a class="headerlink" href="#openobserve" title="Permanent link">#</a></h3>
+<p>OpenObserve is a cloud native observability platform (Logs, Metrics, Traces) for real life log data, significantly lower operational cost and ease of use. </p>
+<p>It can scale to petabytes of data, is highly performant and allows you to sleep better at night 😀. </p>
+<p>Check the more information at <a href="https://openobserve.ai/docs/">Openobserve documentation</a></p>
+<p>Binaries can be downloaded from releases page for appropriate platform. <a href="https://github.com/openobserve/openobserve/releases">Openobserve</a></p>
+<p>Created a script to run the "openobserve" executable which is available at below path</p>
+<pre><code>/home/laxma/openobserve/openobserve_start.sh
+</code></pre>
+<p>Now point your browser to http://172.16.22.22:5080 and login</p>
+<h4 id="configure-the-fluent-bit-for-the-logs-aggregation">Configure the fluent-bit for the logs aggregation<a class="headerlink" href="#configure-the-fluent-bit-for-the-logs-aggregation" title="Permanent link">#</a></h4>
+<p>Fluentbit is a lightweight and open-source log forwarder for Kubernetes. It is designed to be fast and efficient.</p>
+<p>It is also a part of the Fluentd ecosystem, which is a popular open-source log collector.</p>
+<p>It works by tailing the files that contain the logs you want to forward. It then parses the logs and sends them to the destination you specify. </p>
+<p>It can also enrich your logs with additional metadata, such as the Kubernetes pod name, pod ID, and container name</p>
+<p>1.Install Fluentbit
+<div class="highlight"><pre><span></span><code>helm repo add fluent https://fluent.github.io/helm-charts
+
+helm repo update
+
+helm upgrade --install fluent-bit fluent/fluent-bit --namespace fluent-bit --create-namespace
+</code></pre></div></p>
+<p>This will install FluentBit as a daemonset(A daemonset ensures that one and only one pod runs on every node of the cluster.) and create the necessary service accounts, roles, and configuration needed to run FluentBit on cluster. </p>
+<p>Default values in the chart will enrich the logs with additional metadata, such as the Kubernetes pod name, pod ID, and container name.</p>
+<p>2.Configure FluentBit to Forward Logs to OpenObserve</p>
+<p>Once FluentBit is installed and running on your Kubernetes cluster, the next step is to configure FluentBit to send logs to OpenObserve</p>
+<p>OpenObserve supports an HTTP endpoint, and FluentBit has an HTTP output plugin which we can use for this purpose.</p>
+<p>To do this, we'll need to modify the FluentBit ConfigMap, specifically the OUTPUT section, to include the HTTP output plugin and the OpenObserve endpoint details.</p>
+<p>Head over to OpenObserve UI &gt; Ingestion &gt; Logs &gt; Fluentbit and copy the configuration from there.</p>
+<p>Get the default configmap for fluentbit that is part of the installation.
+<div class="highlight"><pre><span></span><code>kubectl -n fluent-bit get configmap fluent-bit -o yaml &gt; fluent-bit.yaml
+</code></pre></div>
+This will create a file called fluent-bit.yaml in current directory. Open this file in editor and we will find two sections, for OUTPUT. </p>
+<p>Paste the configuration that we got from OpenObserve UI in the fluent-bit.yaml file replacing 2 existing OUTPUT sections.</p>
+<p>Check the manifest of fluentbit configmap at /home/laxma/openobserve/fluent-bit.yaml</p>
+<p>3.Apply Changes and Start Forwarding Logs</p>
+<p>Once ave updated the FluentBit ConfigMap, can apply the changes by running:
+<div class="highlight"><pre><span></span><code>kubectl apply -f fluent-bit.yaml
+</code></pre></div></p>
+<p>One last step is to restart the FluentBit pods so that they pick up the new configuration
+<div class="highlight"><pre><span></span><code>kubectl delete pods -n fluent-bit -l app.kubernetes.io/name=fluent-bit
+</code></pre></div>
+FluentBit should now begin to forward logs from cluster to the OpenObserve endpoint specified. We can then use OpenObserve UI to view and analyze the logs.</p>
+<p>Reference doc:<a href="https://openobserve.ai/blog/how-to-send-kubernetes-logs-using-fluent-bit/">fluent-bit</a></p>
+<h3 id="shell-auto-completion-for-kubectl">Shell Auto-Completion for Kubectl<a class="headerlink" href="#shell-auto-completion-for-kubectl" title="Permanent link">#</a></h3>
+<p>kubectl provides autocompletion support for Bash, Zsh, Fish, and PowerShell, which can saves a lot of typing.</p>
+<p>1.Install bash-completion
+<div class="highlight"><pre><span></span><code>apt-get install bash-completion
+</code></pre></div>
+The above commands create /usr/share/bash-completion/bash_completion, which is the main script of bash-completion.</p>
+<p>Depending on our package manager, we have to manually source this file in our ~/.bashrc file.
+<div class="highlight"><pre><span></span><code>source /usr/share/bash-completion/bash_completion
+</code></pre></div>
+2.Enable kubectl autocompletion</p>
+<p>Now we need to ensure that the kubectl completion script gets sourced in all our shell sessions.
+<div class="highlight"><pre><span></span><code>echo &#39;source &lt;(kubectl completion bash)&#39; &gt;&gt;~/.bashrc
+</code></pre></div>
+After reloading our shell, kubectl autocompletion should be working. To enable bash autocompletion in current session of shell, source the bashrc file:
+<div class="highlight"><pre><span></span><code>source ~/.bashrc
+</code></pre></div></p>
+<h2 id="setup-of-dev-replication-server"><strong>Setup of Dev Replication Server</strong><a class="headerlink" href="#setup-of-dev-replication-server" title="Permanent link">#</a></h2>
+<p>Following are the softwares along with their versions running in Build environment</p>
+<table>
+<thead>
+<tr>
+<th>Software</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Docker</td>
+<td>24.0.7</td>
+</tr>
+<tr>
+<td>docker-compose</td>
+<td>1.29.2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="docker_1">Docker<a class="headerlink" href="#docker_1" title="Permanent link">#</a></h3>
+<p>The Docker installation package available in the official Ubuntu repository may not be the latest version. To ensure we get the latest version, we’ll install Docker from the official Docker repository. To do that, we’ll add a new package source, add the GPG key from Docker to ensure the downloads are valid, and then install the package.</p>
+<p>First, update your existing list of packages:
+<div class="highlight"><pre><span></span><code>sudo apt update
+</code></pre></div>
+Next, install a few prerequisite packages which let apt use packages over HTTPS:
+<div class="highlight"><pre><span></span><code>sudo apt install apt-transport-https ca-certificates curl software-properties-common
+</code></pre></div>
+Then add the GPG key for the official Docker repository to your system:
+<div class="highlight"><pre><span></span><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+</code></pre></div>
+Add the Docker repository to APT sources:
+<div class="highlight"><pre><span></span><code>sudo add-apt-repository &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable&quot;
+</code></pre></div>
+This will also update our package database with the Docker packages from the newly added repo.</p>
+<p>Make sure to install from the Docker repo instead of the default Ubuntu repo:
+<div class="highlight"><pre><span></span><code>apt-cache policy docker-ce
+</code></pre></div>
+Finally, install Docker:
+<div class="highlight"><pre><span></span><code>sudo apt install docker-ce
+</code></pre></div>
+Docker should now be installed, the daemon started, and the process enabled to start on boot. Check that it’s running:
+<div class="highlight"><pre><span></span><code>sudo systemctl status docker
+</code></pre></div></p>
+<h3 id="docker-compose">docker-compose<a class="headerlink" href="#docker-compose" title="Permanent link">#</a></h3>
+<p>Prerequisites:</p>
+<ul>
+<li>Make sure Docker installed on server</li>
+</ul>
+<p>Download the executable
+<div class="highlight"><pre><span></span><code>sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
+</code></pre></div>
+Next, set the correct permissions so that the docker-compose command is executable:
+<div class="highlight"><pre><span></span><code>sudo chmod +x /usr/local/bin/docker-compose
+</code></pre></div>
+To verify that the installation was successful, run:
+<div class="highlight"><pre><span></span><code>docker-compose --version
+</code></pre></div></p>
+<p>We are running 3 docker containers along with data volumes in this machine. Check them using below command.
+<div class="highlight"><pre><span></span><code>docker ps
+</code></pre></div>
+We are running PostgresDB, MongoDB and RabbitMQ.</p>
+<p>Respective docker-compose files for these DBs and message brokers are available at:</p>
+<pre><code>/home/devreplica/Fintrust/Postgress
+  /home/devreplica/Fintrust/Mongo
+  /home/devreplica/Fintrust/RabbitMQ
+</code></pre>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.78eede0e.min.js"></script>
+      
+        <script src="../../../../js/print-site.js"></script>
+      
+        <script src="../../../../assets/mkdocs_puml/puml.js"></script>
+      
+        <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      
+        <script src="../../../../assets/mkdocs_puml/interaction.js"></script>
+      
+    
+  </body>
+</html>

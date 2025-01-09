@@ -1,0 +1,2284 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://prasadkothapally.github.io/wiki/Build/Design/AllFunds/Components/af-funds/">
+      
+      
+        <link rel="prev" href="../af-eventpublisher/">
+      
+      
+        <link rel="next" href="../af-notifications/">
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.2.0">
+    
+    
+      
+        <title>Funds Microservice - AllFunds Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.0e669242.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="../../../../../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../../../../../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../../../../../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../../../../../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../../../../../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../../../../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../../../../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../../../../../assets/mkdocs_puml/puml.css">
+    
+      <link rel="stylesheet" href="../../../../../assets/mkdocs_puml/interaction.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#funds-microservice" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="AllFunds Wiki" class="md-header__button md-logo" aria-label="AllFunds Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AllFunds Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Funds Microservice
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/prasadkothapally/wiki.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="AllFunds Wiki" class="md-nav__button md-logo" aria-label="AllFunds Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    AllFunds Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/prasadkothapally/wiki.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Build
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Build
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Architecture/Deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deployment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Architecture/Messaging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Messaging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Architecture/Observability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Observability
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Architecture/Persistence/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Persistence
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Architecture/Reliability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reliability
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Architecture/Scalability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scalability
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Architecture/Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Architecture/TechStack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Design
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2" >
+        
+          <label class="md-nav__link" for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Accounting
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Accounting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2_1" >
+        
+          <label class="md-nav__link" for="__nav_3_3_2_1" id="__nav_3_3_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Components
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_3_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Components
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Accounting/Components/acc-analytics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acc analytics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Accounting/Components/acc-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acc api
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Accounting/Components/acc-bo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acc bo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2_2" >
+        
+          <label class="md-nav__link" for="__nav_3_3_2_2" id="__nav_3_3_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dictionary
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Dictionary
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Accounting/Dictionary/dataFlow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Flow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Accounting/Dictionary/erd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entity-Relationship Diagram
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Accounting/Dictionary/procedures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Procedures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Accounting/Dictionary/tables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3" checked>
+        
+          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    AllFunds
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            AllFunds
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3_1" checked>
+        
+          <label class="md-nav__link" for="__nav_3_3_3_1" id="__nav_3_3_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Components
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_3_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Components
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../af-eventpublisher/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Event Publisher
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Funds Microservice
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../af-notifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notifications Microservice
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../af-portfolio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Portfolio Microservice
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../af-profile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Profile Microservice
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../af-scheduler/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Af scheduler
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dlq-processor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DLQ Processor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../statemachines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    StateMachines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3_2" >
+        
+          <label class="md-nav__link" for="__nav_3_3_3_2" id="__nav_3_3_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dictionary
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_3_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Dictionary
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Dictionary/collections/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Collections
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Dictionary/tables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_4" >
+        
+          <label class="md-nav__link" for="__nav_3_3_4" id="__nav_3_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Utilities
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Utilities
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Utilities/kestra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kestra
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Engineering
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Engineering
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Engineering/Principles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Principles and Practices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Run
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Run
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Run/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Run/Security%20%26%20Authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security &amp; Authentication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Run/build-server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build Server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Environments
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Environments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_1" >
+        
+          <label class="md-nav__link" for="__nav_4_4_1" id="__nav_4_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Development
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Run/Environments/Development/Overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Run/Environments/Development/setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_2" >
+        
+          <label class="md-nav__link" for="__nav_4_4_2" id="__nav_4_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Staging
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Staging
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Run/Environments/Staging/Overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Run/Environments/Staging/SecretsManager%20Implementation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS Secrets Manager Implementation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Run/Environments/Staging/SecretsManager/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS Secrets Manager
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Run/Environments/Staging/setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Playground
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Playground
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../playground/Staging%20Database/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metabase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../playground/howto-diagrams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Playground to try out various diagrams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="funds-microservice">Funds Microservice<a class="headerlink" href="#funds-microservice" title="Permanent link">#</a></h1>
+<p><span dir="">Funds component is responsible to upload funds details. Once funds will be uploaded and will be validated. Then these funds will be stored into Database once validation will be done.</span>\
+We can search funds by passing either fully match or partial match of text. \
+\
+<strong>Upload:</strong> This api can be used to upload excel containing funds details.\
+\
+<strong>Search:</strong> This api is used to search fund name by passing partial text or exact match fund name.\
+\
+<strong>Filter:</strong> This api is used to filter funds by passing Asset class type and Consistency factory.\
+\
+<strong>Facts by ISIN:</strong> This api is used to filter facts by isin.</p>
+<h1 id="interface-upload">Interface upload<a class="headerlink" href="#interface-upload" title="Permanent link">#</a></h1>
+<h2 id="api-apirestfundsupload">api : /api/rest/funds/upload<a class="headerlink" href="#api-apirestfundsupload" title="Permanent link">#</a></h2>
+<h2 id="request-and-response-of-upload-funds">Request and Response of Upload funds<a class="headerlink" href="#request-and-response-of-upload-funds" title="Permanent link">#</a></h2>
+<h3 id="request">Request<a class="headerlink" href="#request" title="Permanent link">#</a></h3>
+<h4 id="request-body">Request Body<a class="headerlink" href="#request-body" title="Permanent link">#</a></h4>
+<p><span dir="">We can upload excel file as funds details</span>.</p>
+<table>
+<thead>
+<tr>
+<th>Content Type</th>
+<th>Body</th>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>multipart/form-data</td>
+<td>Excel file</td>
+<td>file</td>
+<td>excel file</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response">Response<a class="headerlink" href="#response" title="Permanent link">#</a></h3>
+<h4 id="response-body">Response Body<a class="headerlink" href="#response-body" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>body</th>
+<th>Headers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JSON</td>
+<td>accept=application/json</td>
+</tr>
+</tbody>
+</table>
+<h1 id="interface-search">Interface search<a class="headerlink" href="#interface-search" title="Permanent link">#</a></h1>
+<h2 id="api-apifundssearch">api : /api/funds/search<a class="headerlink" href="#api-apifundssearch" title="Permanent link">#</a></h2>
+<h2 id="request-and-response-of-search">Request and Response of search<a class="headerlink" href="#request-and-response-of-search" title="Permanent link">#</a></h2>
+<h3 id="request_1">Request<a class="headerlink" href="#request_1" title="Permanent link">#</a></h3>
+<h4 id="request-body_1">Request Body<a class="headerlink" href="#request-body_1" title="Permanent link">#</a></h4>
+<p><span dir="">We can search fund by request param</span></p>
+<table>
+<thead>
+<tr>
+<th>request param</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>phrase</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response_1">Response<a class="headerlink" href="#response_1" title="Permanent link">#</a></h3>
+<h4 id="response-body_1">Response Body<a class="headerlink" href="#response-body_1" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>body</th>
+<th>Headers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JSON</td>
+<td>accept=application/json</td>
+</tr>
+</tbody>
+</table>
+<h1 id="interface-filter">Interface filter<a class="headerlink" href="#interface-filter" title="Permanent link">#</a></h1>
+<h2 id="api-apifundsfilter">api : /api/funds/filter<a class="headerlink" href="#api-apifundsfilter" title="Permanent link">#</a></h2>
+<h2 id="request-and-response-of-filter">Request and Response of filter<a class="headerlink" href="#request-and-response-of-filter" title="Permanent link">#</a></h2>
+<h3 id="request_2">Request<a class="headerlink" href="#request_2" title="Permanent link">#</a></h3>
+<h4 id="request-body_2">Request Body<a class="headerlink" href="#request-body_2" title="Permanent link">#</a></h4>
+<p><span dir="">We can filter funds by passing asset class type and consistency factor as FilterRequest</span></p>
+<table>
+<thead>
+<tr>
+<th>Request name</th>
+<th>body</th>
+<th>Headers</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FilterRequest</td>
+<td>JSON</td>
+<td>accept=application/json</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="response_2">Response<a class="headerlink" href="#response_2" title="Permanent link">#</a></h3>
+<h4 id="response_3">Response<a class="headerlink" href="#response_3" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Headers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contentType=text/csv</td>
+</tr>
+</tbody>
+</table>
+<h1 id="interface-facts">Interface facts<a class="headerlink" href="#interface-facts" title="Permanent link">#</a></h1>
+<h2 id="api-apifundsisinfacts">api : /api/funds/{isin}/facts<a class="headerlink" href="#api-apifundsisinfacts" title="Permanent link">#</a></h2>
+<h2 id="request-and-response-of-facts">Request and Response of facts<a class="headerlink" href="#request-and-response-of-facts" title="Permanent link">#</a></h2>
+<h3 id="request_3">Request<a class="headerlink" href="#request_3" title="Permanent link">#</a></h3>
+<h4 id="request-body_3">Request Body<a class="headerlink" href="#request-body_3" title="Permanent link">#</a></h4>
+<p><span dir="">We can fetch fatcs by isin</span>.</p>
+<table>
+<thead>
+<tr>
+<th>request-param</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isin</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response_4">Response<a class="headerlink" href="#response_4" title="Permanent link">#</a></h3>
+<h4 id="response-body_2">Response Body<a class="headerlink" href="#response-body_2" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Headers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contentType=text/csv</td>
+</tr>
+</tbody>
+</table>
+<h1 id="interface-attributes">Interface attributes<a class="headerlink" href="#interface-attributes" title="Permanent link">#</a></h1>
+<h2 id="api-apifundsisinattributes">api : /api/funds/{isin}/attributes<a class="headerlink" href="#api-apifundsisinattributes" title="Permanent link">#</a></h2>
+<h2 id="request-and-response-of-attributes">Request and Response of attributes<a class="headerlink" href="#request-and-response-of-attributes" title="Permanent link">#</a></h2>
+<h3 id="request_4">Request<a class="headerlink" href="#request_4" title="Permanent link">#</a></h3>
+<h4 id="request-body_4">Request Body<a class="headerlink" href="#request-body_4" title="Permanent link">#</a></h4>
+<p><span dir="">We can fetch attributes by isin</span>.</p>
+<table>
+<thead>
+<tr>
+<th>request-param</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fund-name</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response_5">Response<a class="headerlink" href="#response_5" title="Permanent link">#</a></h3>
+<h4 id="response-body_3">Response Body<a class="headerlink" href="#response-body_3" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Headers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contentType=text/csv</td>
+</tr>
+</tbody>
+</table>
+<h1 id="interface-recommendation">Interface recommendation<a class="headerlink" href="#interface-recommendation" title="Permanent link">#</a></h1>
+<h2 id="api-apirestrecommendation">api : /api/rest/recommendation<a class="headerlink" href="#api-apirestrecommendation" title="Permanent link">#</a></h2>
+<h2 id="request-and-response">Request and Response<a class="headerlink" href="#request-and-response" title="Permanent link">#</a></h2>
+<h3 id="request_5">Request<a class="headerlink" href="#request_5" title="Permanent link">#</a></h3>
+<h4 id="request-body_5">Request Body<a class="headerlink" href="#request-body_5" title="Permanent link">#</a></h4>
+<p><span dir="">We can get recommendations</span></p>
+<table>
+<thead>
+<tr>
+<th>Request name</th>
+<th>body</th>
+<th>Headers</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PortfolioRecommendationRequest</td>
+<td>JSON</td>
+<td>accept=application/json</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="response_6">Response<a class="headerlink" href="#response_6" title="Permanent link">#</a></h3>
+<h4 id="response-body_4">Response Body<a class="headerlink" href="#response-body_4" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Request name</th>
+<th>body</th>
+<th>Headers</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PortfolioRecommendationResponse</td>
+<td>JSON</td>
+<td>accept=application/json</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="diagrams">Diagrams<a class="headerlink" href="#diagrams" title="Permanent link">#</a></h1>
+<p>Data flow diagram</p>
+<h2 id="example-diagram">Example diagram<a class="headerlink" href="#example-diagram" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>flowchart TD
+    A[Client] --&gt;|uploading excel file\n of fund details|B(Fund upload API)
+    B --&gt;|uploading excel file| C[File Upload Service]
+    C --&gt; B
+    B --&gt; |parsing catalog|D[Catalog Excel Parser Service]
+    D --&gt; B
+    B --&gt; |calling fund service to \nstore funds in Database|E[Fund Service]
+    E ==&gt; |store funds| F[(Funds Database)]
+    E ==&gt; |store funds returns| F
+    E ==&gt; |validate funds \n stored procedure will be callded| F
+</code></pre></div>
+<h1 id="persistence">Persistence<a class="headerlink" href="#persistence" title="Permanent link">#</a></h1>
+<h2 id="postgres">Postgres<a class="headerlink" href="#postgres" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Database Engine</td>
+<td>postgresql</td>
+</tr>
+<tr>
+<td>Schema</td>
+<td></td>
+</tr>
+<tr>
+<td>Migrations</td>
+<td>Yes / No</td>
+</tr>
+<tr>
+<td>Charset</td>
+<td>UTF-8</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dictionary">Dictionary<a class="headerlink" href="#dictionary" title="Permanent link">#</a></h3>
+<h4 id="tables">Tables<a class="headerlink" href="#tables" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>templates</td>
+<td>Maintain all templates</td>
+</tr>
+<tr>
+<td>notifications_audit</td>
+<td>Maintain notification data</td>
+</tr>
+</tbody>
+</table>
+<h4 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Field</th>
+<th>Purpose</th>
+<th>Type</th>
+<th>Size</th>
+<th>Nullable</th>
+<th>Keys</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>notifications_audit</td>
+<td>id</td>
+<td>Identifier</td>
+<td>int</td>
+<td></td>
+<td>No</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>notifications_audit</td>
+<td>sender</td>
+<td>notification sender</td>
+<td>text</td>
+<td>255</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>notifications_audit</td>
+<td>receiver</td>
+<td>notification receiver</td>
+<td>text</td>
+<td>255</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>notifications_audit</td>
+<td>message</td>
+<td>message</td>
+<td>text</td>
+<td>255</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>notifications_audit</td>
+<td>createdDate</td>
+<td>notification created date</td>
+<td>date</td>
+<td>20</td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Field</th>
+<th>Purpose</th>
+<th>Type</th>
+<th>Size</th>
+<th>Nullable</th>
+<th>Keys</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>templates</td>
+<td>key</td>
+<td>Identifier</td>
+<td>text</td>
+<td></td>
+<td>No</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>templates</td>
+<td>description</td>
+<td>template description</td>
+<td>text</td>
+<td>255</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>templates</td>
+<td>type</td>
+<td>notification type</td>
+<td>text</td>
+<td>255</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>templates</td>
+<td>subject</td>
+<td>email subject</td>
+<td>text</td>
+<td>255</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>templates</td>
+<td>body</td>
+<td>email body</td>
+<td>text</td>
+<td>255</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>templates</td>
+<td>status</td>
+<td>template status</td>
+<td>text</td>
+<td>1</td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="mongo">Mongo<a class="headerlink" href="#mongo" title="Permanent link">#</a></h2>
+<h3 id="collections">Collections<a class="headerlink" href="#collections" title="Permanent link">#</a></h3>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<h1 id="build">Build<a class="headerlink" href="#build" title="Permanent link">#</a></h1>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Artifacts</td>
+<td></td>
+</tr>
+<tr>
+<td>Location</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">#</a></h1>
+<p>To be filled</p>
+<h1 id="security">Security<a class="headerlink" href="#security" title="Permanent link">#</a></h1>
+<p>To be filled</p>
+<h1 id="scalability">Scalability<a class="headerlink" href="#scalability" title="Permanent link">#</a></h1>
+<p>To be filled</p>
+<h1 id="resilience">Resilience<a class="headerlink" href="#resilience" title="Permanent link">#</a></h1>
+<p>To be filled</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": [], "search": "../../../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.78eede0e.min.js"></script>
+      
+        <script src="../../../../../js/print-site.js"></script>
+      
+        <script src="../../../../../assets/mkdocs_puml/puml.js"></script>
+      
+        <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      
+        <script src="../../../../../assets/mkdocs_puml/interaction.js"></script>
+      
+    
+  </body>
+</html>
