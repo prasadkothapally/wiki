@@ -1,0 +1,28 @@
+name: Deploy MkDocs to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Change to your default branch if it's not `main`
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        pip install mkdocs mkdocs-material mkdocs-kroki-plugin mkdocs-mermaid2-plugin mkdocs-print-site-plugin
+
+    - name: Deploy to GitHub Pages
+      run: |
+        mkdocs gh-deploy --force
+

@@ -1,18 +1,29 @@
-site_name: Fintrust
+site_name: AllFunds Wiki
 site_url: https://prasadkothapally.github.io/wiki/
+repo_url: https://github.com/prasadkothapally/wiki.git
+edit_uri: https://gitlabnew.techwave.net/fintrust/wiki/-/edit/main/docs/
+
+#theme: readthedocs
 theme:
   name: material
-
-# Add the deployment plugin for GitHub Pages
+markdown_extensions:
+  - toc:
+      permalink: "#"
+  - pymdownx.superfences
 plugins:
-  - search
-  - github-pages
-
-nav:
-  - Home: index.md
-  - About: about.md
-
-# Repository details for GitHub Pages
-repo_url: https://github.com/prasadkothapally/wiki.git
-repo_name: prasadkothapally/wiki
-
+ - kroki:
+    ServerURL: https://kroki.io
+    FencePrefix: kroki-
+    enable_plantuml: true
+    EnableBlockDiag: True
+    Enablebpmn: True
+    EnableMermaid: False
+    EnableDiagramsnet: True
+    FileTypes:
+      - png
+      - svg
+        #- plantuml:
+        #  puml_url: https://www.plantuml.com/plantuml/
+        #num_workers: 8
+ - mermaid2:
+ - print-site:
