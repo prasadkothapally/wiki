@@ -1,28 +1,41 @@
-name: Deploy MkDocs to GitHub Pages
+name: Build and Deploy MkDocs Site
 
 on:
   push:
     branches:
-      - main  # Change to your default branch if it's not `main`
+      - main  # Trigger workflow on changes to main branch
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.9'
+      # Step 2: Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
 
-    - name: Install dependencies
-      run: |
-        pip install mkdocs mkdocs-material mkdocs-kroki-plugin mkdocs-mermaid2-plugin mkdocs-print-site-plugin
+      # Step 3: Install MkDocs and plugins
+      - name: Install dependencies
+        run: |
+          pip install mkdocs mkdocs-material
 
-    - name: Deploy to GitHub Pages
-      run: |
-        mkdocs gh-deploy --force
+      # Step 4: Build the MkDocs site
+      - name: Build MkDocs
+        run: mkdocs build
+
+      # Step 5: Deploy static files to the main branch
+      - name: Deploy to main branch
+        run: |
+          cp -r site/* .
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Deploy MkDocs site"
+          git push origin main
 

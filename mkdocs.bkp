@@ -22,8 +22,8 @@ plugins:
     FileTypes:
       - png
       - svg
- - plantuml:
-    puml_url: https://www.plantuml.com/plantuml/
-    num_workers: 8
+        #- plantuml:
+        #  puml_url: https://www.plantuml.com/plantuml/
+        #num_workers: 8
  - mermaid2:
  - print-site:
