@@ -3,6 +3,10 @@ site_url: https://prasadkothapally.github.io/wiki/
 repo_url: https://github.com/prasadkothapally/wiki.git
 edit_uri: https://gitlabnew.techwave.net/fintrust/wiki/-/edit/main/docs/
 
+nav:
+  - Home: index.md
+  - About: about.md
+
 #theme: readthedocs
 theme:
   name: material
