@@ -1,0 +1,18 @@
+site_name: Fintrust
+site_url: https://prasadkothapally.github.io/wiki/
+theme:
+  name: material
+
+# Add the deployment plugin for GitHub Pages
+plugins:
+  - search
+  - github-pages
+
+nav:
+  - Home: index.md
+  - About: about.md
+
+# Repository details for GitHub Pages
+repo_url: https://github.com/prasadkothapally/wiki.git
+repo_name: prasadkothapally/wiki
+
